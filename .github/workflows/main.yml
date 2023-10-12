@@ -1,0 +1,19 @@
+name: My Workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    env:
+      MY_API_KEY: ${{ secrets.TEST1 }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # You can now use the secret in subsequent steps
+      - name: Use Secret
+        run: |
+          echo "My secret value is $MY_API_KEY"
