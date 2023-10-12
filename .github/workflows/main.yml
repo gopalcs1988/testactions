@@ -16,4 +16,4 @@ jobs:
       # You can now use the secret in subsequent steps
       - name: Use Secret
         run: |
-          echo "My secret value is $MY_API_KEY"
+          echo My secret value is $MY_API_KEY
