@@ -7,7 +7,7 @@ on:
 jobs:
   my_job:
     runs-on: ubuntu-latest
-    secrets:
+    env:
       MY_API_KEY: ${{ secrets.TEST1 }}
     steps:
       - name: Checkout code
@@ -16,4 +16,4 @@ jobs:
       # You can now use the secret in subsequent steps
       - name: Use Secret
         run: |
-          echo My secret value is $MY_API_KEY
+          echo "My secret value is $MY_API_KEY"
